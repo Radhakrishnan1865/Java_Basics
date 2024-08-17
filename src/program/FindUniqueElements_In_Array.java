@@ -1,13 +1,34 @@
 package program;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FindUniqueElements_In_Array {
 
 
 	public static void main(String[] args) {
-        int[] array = { 1,2,3,1,2,4}; // Example array
+       
+		
+		 // Example array with duplicate values
+        int[] array = {1, 2, 2, 3, 4, 4, 5};
+
+        // Create a HashSet to store unique values
+        Set<Integer> uniqueValues = new HashSet<>();
+
+        // Add each element of the array to the HashSet
+        for (int value : array) {
+            uniqueValues.add(value);
+        }
+
+        // Optionally, convert HashSet to an array if needed
+        Integer[] uniqueArray = uniqueValues.toArray(new Integer[0]);
+
+        // Print the unique values
+        System.out.println("Unique values:");
+        for (int value : uniqueArray) {
+            System.out.println(value);
+        }
+		/*int[] array = { 1,2,4,3,1,2}; // Example array
         
         int uniqueValue = findUnique(array);
         
@@ -32,5 +53,6 @@ public class FindUniqueElements_In_Array {
         
         // If no unique element found, you can return a default value or throw an exception
         throw new RuntimeException("No unique element found");
+        */
 	}
 }
